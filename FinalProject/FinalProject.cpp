@@ -116,33 +116,17 @@ int main()
 
             printf("\n");
 
-            cout << "1. Изменить логин" << endl;
-            cout << "2. Изменить пароль" << endl;
-            cout << "3. Написать сообщение" << endl;
-            cout << "4. Информация об аккаунте" << endl;
-            cout << "5. Выйти из аккаунта" << endl;
-            cout << "6. Показать входящие сообщения" << endl;
+            cout << "1. Написать сообщение" << endl;
+            cout << "2. Информация об аккаунте" << endl;
+            cout << "3. Выйти из аккаунта" << endl;
+            cout << "4. Показать входящие сообщения" << endl;
 
             int answer;
 
             cin >> answer;
             cout << endl;
 
-            if (answer == 1)
-            {
-                cout << "Введите имя" << endl;
-                cin >> username;
-                cout << endl;
-                user.ChangeName(username);
-            }
-            else if (answer == 2)
-            {
-                cout << "Введите пароль" << endl;
-                cin >> userpassword;
-                cout << endl;
-                user.ChangePassword(userpassword);
-            }
-            else if (answer == 3) 
+            if (answer == 1) 
             {
                 string name, text;
                 cout << "Кому отправить?" << endl;
@@ -154,17 +138,17 @@ int main()
                 getline(cin, text);
                 user.SendMesage(name, text);
             }
-            else if (answer == 4)
+            else if (answer == 2)
             {
                 user.Info();
                 printf("\n");
             }
-            else if (answer == 5)
+            else if (answer == 3)
             {   
                 delete userr;
                 break;
             }
-            else if (answer == 6) 
+            else if (answer == 4) 
             {
                 user.ShowMesages();
             }
