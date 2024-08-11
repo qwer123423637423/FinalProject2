@@ -148,7 +148,7 @@ int main()
                 cout << "Кому отправить?" << endl;
                 cin >> name;
                 cout << endl;
-                cout << "Введите сообщение(заменяя пробелы на _)" << endl;
+                cout << "Введите сообщение" << endl;
                 cin.seekg(cin.eof());
                 _flushall();
                 getline(cin, text);
