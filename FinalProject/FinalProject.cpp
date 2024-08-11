@@ -149,7 +149,9 @@ int main()
                 cin >> name;
                 cout << endl;
                 cout << "Введите сообщение(заменяя пробелы на _)" << endl;
-                cin >> text;
+                cin.seekg(cin.eof());
+                _flushall();
+                getline(cin, text);
                 user.SendMesage(name, text);
             }
             else if (answer == 4)
