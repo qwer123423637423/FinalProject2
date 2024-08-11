@@ -8,7 +8,9 @@ public:
 	User(string name, string password);
 	void ChangeName(string name);
 	void ChangePassword(string password);
-	void Info();
+	void Info() const;
+	void ShowMesages();
+	void SendMesage(string name, string text);
 	~User();
 
 private:
