@@ -18,7 +18,7 @@ int main()
         if (answer == 1)
         {
             while (true) {
-                cout << "Введите логин и пароль";
+                cout << "Введите логин и пароль" << endl;
                 cin >> username;
                 cin >> userpassword;
 
@@ -29,8 +29,9 @@ int main()
                 if (in.is_open())
                 {
                     while (getline(in, line))
-                    {
-                        if (line.find(username) != string::npos)
+                    {   
+                        int size_of_name = line.find(" ");
+                        if (line.substr(0, size_of_name) == username)
                         {
                             counter += 1;
                             break;
@@ -38,8 +39,17 @@ int main()
                     }
                     if (counter > 0)
                     {
-
-                        break;
+                        int size = line.length() - line.find(" ");
+                        string _password = line.substr(line.find(" ") + 1, size);
+                        if (userpassword == _password)
+                        {
+                            break;
+                        }
+                        else if (userpassword != _password)
+                        {   
+                            cout << "Неверный пароль!";
+                            continue;
+                        }
                     }
                     if (counter == 0)
                     {
@@ -65,14 +75,15 @@ int main()
                 {
                     while (getline(in, line))
                     {
-                        if (line.find(username) != string::npos)
-                        {
+                        int size_of_name = line.find(" ");
+                        if (line.substr(0, size_of_name) == username)
+                        {   
                             counter += 1;
                         }
                     }
                     if (counter > 0)
                     {
-                        cout << "Придумайте более оригинальный ник" << endl;
+                        cout << "Пользователь с таким ником уже существует" << endl;
                         continue;
                     }
                     else if (counter == 0) 
@@ -82,13 +93,17 @@ int main()
                 }
             }
             ofstream out;
-            out.open("users.txt");
+            out.open("users.txt", ios::app);
             if (out.is_open()) 
             {
-                out << username + " " + userpassword;
+                out << username + " " + userpassword + "\n";
             }
             out.close();
 
+        }
+        else
+        {
+            break;
         }
 
 
@@ -133,7 +148,7 @@ int main()
                 cout << "Кому отправить?" << endl;
                 cin >> name;
                 cout << endl;
-                cout << "Введите сообщение" << endl;
+                cout << "Введите сообщение(заменяя пробелы на _)" << endl;
                 cin >> text;
                 user.SendMesage(name, text);
             }
@@ -154,7 +169,7 @@ int main()
             else 
             {
                 cout << "Такого выбора нет" << endl;
-                continue;
+                break;
             }
         }
     }
