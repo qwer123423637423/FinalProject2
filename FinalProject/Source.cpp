@@ -20,6 +20,7 @@ User::~User()
 {
 }
 
+//показать входящие сообщения
 void User::ShowMesages()
 {
 	string line;
@@ -44,6 +45,7 @@ void User::ShowMesages()
 	}
 	in.close();
 }
+//отправить сообщение
 void User::SendMesage(string name, string text) 
 {
 	ofstream out;
@@ -54,6 +56,7 @@ void User::SendMesage(string name, string text)
 	}
 	out.close();
 }
+// посмотреть сообщение главного чата
 void User::SeeGeneral() 
 {
 	string line;
@@ -68,6 +71,7 @@ void User::SeeGeneral()
 	}
 	in.close();
 }
+//отправить сообщение в главный чат
 void User::SendGeneral(string text) 
 {
 	ofstream out;

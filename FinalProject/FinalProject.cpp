@@ -19,11 +19,13 @@ int main()
         cin >> answer;
         if (answer == 1)
         {
+            /* Вход в аккаунт*/
             while (true) {
                 cout << "Введите логин и пароль" << endl;
                 cin >> username;
                 cin >> userpassword;
 
+                /*Алгоритм взятия из файла данных*/
                 string line;
                 int flag = 0;
                 int counter = 0;
@@ -67,6 +69,7 @@ int main()
         {
 
             while (true) {
+                /*Почти тоже самое, что и вход, но запись в файл*/
                 cout << "Введите логин и пароль" << endl;
                 cin >> username;
                 cin >> userpassword;
@@ -118,6 +121,7 @@ int main()
 
             printf("\n");
 
+            /*интерфейс*/
             cout << "1. Написать сообщение" << endl;
             cout << "2. Информация об аккаунте" << endl;
             cout << "3. Выйти из аккаунта" << endl;
@@ -129,7 +133,7 @@ int main()
 
             cin >> answer;
             cout << endl;
-
+            // действия с аккаунтом
             if (answer == 1) 
             {
                 string name, text;

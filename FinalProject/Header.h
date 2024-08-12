@@ -5,6 +5,7 @@ using namespace std;
 class User 
 {
 public:
+	// описание методов классов
 	User(string name, string password);
 	void Info() const;
 	void ShowMesages();
