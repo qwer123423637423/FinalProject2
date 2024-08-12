@@ -47,7 +47,7 @@ int main()
                         }
                         else if (userpassword != _password)
                         {   
-                            cout << "Неверный пароль!";
+                            cout << "Неверный пароль!" << endl;
                             continue;
                         }
                     }
@@ -112,14 +112,16 @@ int main()
         User* userr = new User(username, userpassword);
         User& user = *userr;
         while (true) {
-            printf("Выберите действие с аккаунтом");
+            printf("Выберите действие");
 
             printf("\n");
 
             cout << "1. Написать сообщение" << endl;
             cout << "2. Информация об аккаунте" << endl;
             cout << "3. Выйти из аккаунта" << endl;
-            cout << "4. Показать входящие сообщения" << endl;
+            cout << "4. Показать входящие сообщения сообщения" << endl;
+            cout << "5. Показать общий чат" << endl;
+            cout << "6. Написать в общий чат" << endl;
 
             int answer;
 
@@ -151,6 +153,18 @@ int main()
             else if (answer == 4) 
             {
                 user.ShowMesages();
+            }
+            else if (answer == 5) 
+            {
+                user.SeeGeneral();
+            }
+            else if (answer == 6) 
+            {   
+                string text;
+                cin.seekg(cin.eof());
+                _flushall();
+                getline(cin, text);
+                user.SendGeneral(text);
             }
             else 
             {

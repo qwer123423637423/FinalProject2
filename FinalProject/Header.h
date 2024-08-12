@@ -9,6 +9,8 @@ public:
 	void Info() const;
 	void ShowMesages();
 	void SendMesage(string name, string text);
+	void SeeGeneral();
+	void SendGeneral(string text);
 	~User();
 
 private:
